@@ -72,7 +72,7 @@
 						<li>Tags</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -195,104 +195,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前端面试小结"><a href="#前端面试小结" class="headerlink" title="前端面试小结"></a>前端面试小结</h2><p>找工作一个多月了，面试了不下15家。基本的前端面试问题，应该说都遇到了。是时候，总结一下这段时间的面试。</p>
-<h3 id="html、css方面"><a href="#html、css方面" class="headerlink" title="html、css方面"></a>html、css方面</h3><h4 id="必问问题"><a href="#必问问题" class="headerlink" title="必问问题"></a>必问问题</h4><h5 id="1-盒子模型"><a href="#1-盒子模型" class="headerlink" title="1.盒子模型"></a>1.盒子模型</h5><p>盒子模型一共有两种：<strong>W3C标准盒子模型</strong>（标准盒子模型）&amp;<strong>IE盒子模型</strong>（怪异盒子模型）。二者都包括：<strong>margin、border、padding、content</strong>。<br>不同的是，标准模型中，content不包含padding和border；怪异模型中，content包含padding和border。<br><img src="./1.JPG" alt="Alt text"><br><img src="./2.JPG" alt="Alt text"></p>
-<p>在CSS3中，新出了属性<strong>box-sizing</strong>.这个属性，有三个值：<strong>content-box|border-box|inherit;</strong></p>
-<p>事例如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div1"</span> <span class="attr">style</span>=<span class="string">"box-sizing:content-box;padding:10px;width:20px;height:20px;border:5px solid #000;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div2"</span> <span class="attr">style</span>=<span class="string">"box-sizing:border-box;padding:10px;width:20px;height:20px;border:5px solid #000;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>效果如下：<br><img src="./Screen Shot 2016-04-08 at 2.09.42 PM.png" alt="Alt text"></p>
-<h5 id="2-块级元素-amp-内联元素"><a href="#2-块级元素-amp-内联元素" class="headerlink" title="2.块级元素&amp; 内联元素"></a>2.块级元素&amp; 内联元素</h5><table>
-<thead>
-<tr>
-<th style="text-align:center">块级元素</th>
-<th style="text-align:center">内联元素</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">address -地址</td>
-<td style="text-align:center">span -内联容器</td>
-</tr>
-<tr>
-<td style="text-align:center">block -块引用</td>
-<td style="text-align:center">strong -粗体强调</td>
-</tr>
-<tr>
-<td style="text-align:center">div -定位</td>
-<td style="text-align:center">em -强调 </td>
-</tr>
-<tr>
-<td style="text-align:center">ul -无序列表</td>
-<td style="text-align:center">i -斜体</td>
-</tr>
-<tr>
-<td style="text-align:center">ol -有序列表</td>
-<td style="text-align:center">a -锚点</td>
-</tr>
-<tr>
-<td style="text-align:center">table -表格</td>
-<td style="text-align:center">img -图片</td>
-</tr>
-<tr>
-<td style="text-align:center">dl -列表</td>
-<td style="text-align:center">input -输入框</td>
-</tr>
-<tr>
-<td style="text-align:center">form -表单</td>
-<td style="text-align:center">label -表格标签</td>
-</tr>
-<tr>
-<td style="text-align:center">menu -菜单</td>
-<td style="text-align:center">big -大字体</td>
-</tr>
-<tr>
-<td style="text-align:center">h1-h6 -标题</td>
-<td style="text-align:center">small -小字体</td>
-</tr>
-<tr>
-<td style="text-align:center">hr -水平分割线</td>
-<td style="text-align:center">select -项目选择</td>
-</tr>
-<tr>
-<td style="text-align:center">p -段落</td>
-<td style="text-align:center">textarea -多行文本框</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>fieldset</strong> -包含form组的框</td>
-<td style="text-align:center">br -换行</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>noframes</strong> -不支持frames时显示的块</td>
-<td style="text-align:center"><strong>acronym</strong> - 首字</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>noscript</strong> -不支持script时显示的块</td>
-<td style="text-align:center"><strong>abbr</strong> -缩写</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>pre</strong> -格式化文本</td>
-<td style="text-align:center">cite -引用</td>
-</tr>
-</tbody>
-</table>
-<h5 id="3-块级元素和行内元素的区别"><a href="#3-块级元素和行内元素的区别" class="headerlink" title="3.块级元素和行内元素的区别"></a>3.块级元素和行内元素的区别</h5><ul>
-<li>默认显示的宽不同<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>块级元素和行内元素的区别<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"border:10px solid #333;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"border:1px solid #333"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>可以看到，在不做其他设置的情况下，div的width和border加一起，显示为浏览器的宽度。而span的width为0.</p>
-<ul>
-<li><p>行内元素会水平排列，从左向右。块级元素会各占一行，垂直方向排列。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>块级元素和行内元素的排布<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background:#333;"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background:#00ff00;"</span>&gt;</span>world<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"background:#333;"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"background:#00ff00;"</span>&gt;</span>world<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>另一个主要区别在盒模型上。块级元素可以设置width、height、margin、padding；行内元素width、height、上下margin 无效。</p>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>块级元素和行内元素的盒模型<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background:#333;height:50px;width:50px;margin:10px;padding:10px;"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"background:#333;height:50px;width:50px;margin:10px;padding:10px;"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>行内元素，可以用line-height、font-size设置高度。当line-height:0;font-size:0;时，显示为0（里面有文字也不会显示）。如若line-height:0;而font-size没有设为0，则还是以font-size的高度。</li>
-</ul>
-<p>–未完待续~</p>
-
+        <h2 id="前端面试小结"><a href="#前端面试小结" class="headerlink" title="前端面试小结"></a>前端面试小结</h2><p>找工作一个多月了，面试了不下15家。基本的前端面试问题，应该说都遇到了。是时候，总结一下这段时间的面试。<br>
       
     </div>
     
@@ -305,6 +208,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/17/前端面试小结/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
