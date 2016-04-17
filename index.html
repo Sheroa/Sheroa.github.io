@@ -219,7 +219,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/17/permission-denied-——搭建博客时，遇到的费事很久的问题/">permission denied ——搭建博客时，遇到的费事很久的问题</a>
+      <a class="article-title" href="/2016/04/17/permission-denied-——搭建博客时，遇到的费事很久的问题/">permission denied</a>
     </h1>
   
 
@@ -228,19 +228,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> ###问题简述<br>趁着离职空挡，看了一些书，做了一些笔记。都放在电脑上。朋友建议搭个博客。查了一下资料，选择了 hexo搭建github pages。搭建很顺利，直到最后一步：<br>执行 “hexo d”命令，一直提示<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Permission to user/repo denied to other-user</span><br></pre></td></tr></table></figure></p>
-<p> ###解决</p>
-<p> ####确认问题缘由<br>看了other-user是借我电脑用的同学的邮箱，是权限出了问题。<br>上网查资料，首先看到了github官方给出的答案：<br>[This error means the key you are pushing with is attached to an account which does not have access to the repository.</p>
+        <h3 id="问题简述"><a href="#问题简述" class="headerlink" title="问题简述"></a>问题简述</h3><p>趁着离职空挡，看了一些书，做了一些笔记。都放在电脑上。朋友建议搭个博客。查了一下资料，选择了 hexo搭建github pages。搭建很顺利，直到最后一步：<br>执行 “hexo d”命令，一直提示<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Permission to user/repo denied to other-user</span><br></pre></td></tr></table></figure></p>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><h4 id="确认问题缘由"><a href="#确认问题缘由" class="headerlink" title="确认问题缘由"></a>确认问题缘由</h4><p>看了other-user是借我电脑用的同学的邮箱，是权限出了问题。<br>上网查资料，首先看到了github官方给出的答案：<br>[This error means the key you are pushing with is attached to an account which does not have access to the repository.</p>
 <p>To fix this, the owner of the repository (user) needs to add your account (other-user) as a collaborator on the repository or to a team that has write access to the repository.](<a href="https://help.github.com/articles/error-permission-to-user-repo-denied-to-other-user/" target="_blank" rel="external">https://help.github.com/articles/error-permission-to-user-repo-denied-to-other-user/</a>)<br>这里，给出了错误的解释，以及他默认的一种情景的解决方案：本机的用户想要访问的库不属于他，需要请求权限。<br>和我所遇到的情况是不一样的。我的情况，更合适的描述是：要修改本机的account。</p>
-<p> ####确认是否为ssh方式的问题<br>继续找资料，能查到的解决方案都是SSH秘钥的。也难怪，git现在基本都用SSH。但，我的SSH秘钥是这次新配的，配置命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"youremail"</span></span><br><span class="line">git config --global user.name <span class="string">"yourname"</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail"</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="确认是否为ssh方式的问题"><a href="#确认是否为ssh方式的问题" class="headerlink" title="确认是否为ssh方式的问题"></a>确认是否为ssh方式的问题</h4><p>继续找资料，能查到的解决方案都是SSH秘钥的。也难怪，git现在基本都用SSH。但，我的SSH秘钥是这次新配的，配置命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"youremail"</span></span><br><span class="line">git config --global user.name <span class="string">"yourname"</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail"</span></span><br></pre></td></tr></table></figure></p>
 <p>并且，为了确认，查看了ssh，查看命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> .ssh</span><br><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure></p>
 <p>显示出的内容，结尾是我的邮箱。<br>也就是说，ssh秘钥是没有问题的。</p>
 <p> ####确认是否为http方式问题<br>排除了git user、SSH方式的user，想到在和github关联的时候，在_config.yml文件中，需要做以下修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: https://github.com/Sheroa/Sheroa.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
 <p>repository里填写的是http的地址。这时，可以想到在我同事借用电脑时，需要通过http方式传文件，添加了他的用户名和密码。这个用户名、密码被记录了下来，并一直保存至今。</p>
 <p> ####http相关的用户名、密码保存在哪里<br>我们知道，http方式如果没有别的辅助工具，需要每次上传都填写用户名、密码。那么，是什么辅助工具记录了用户名、密码？<br>查资料，查到了<a href="http://www.kuqin.com/shuoit/20150121/344505.html" target="_blank" rel="external">mac下，自动保存git用户名和密码</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper osxkeychain</span><br></pre></td></tr></table></figure></p>
 <p>看到了一个关键词：<strong>osxkeychain</strong><br><strong>osx</strong>表示mac的系统啦，那么<strong>keychain</strong>呢？<br>是<a href="http://baike.baidu.com/link?url=HaKEVY-ZZRVUHLJOhi2BMYmniPu8cLJ6_SnDqnfbSzp6HyOBMChw0CIxcJ4ChJlV5XsL7dZgx-y5Y-tYSWmCsOGqG_Jk1puKgh4_Zt8RIOBJbpJU0oLoOQ9xdCaiB7BbCrPlMw4wzlMrZ4-TPg1K5a" target="_blank" rel="external">mac自带的秘钥管理系统</a>。<br>打开keychain，搜索了error提示中的other-user，搜到了两条git开头记录，果断删除。<br>之后，再运行 hexo d，提示输入用户名、密码，输入了自己的，瞬间搞定。</p>
-<p> ####小结</p>
-<ul>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><ul>
 <li>mac上的key是由keychain管理的。如果想要查看、删除等，可以用它来完成。</li>
 <li>自己的电脑，借给别人用之后，特别是提交代码之类，最好查看一下keychain，不是自己的内容，及时删除。以免后患。</li>
 </ul>
