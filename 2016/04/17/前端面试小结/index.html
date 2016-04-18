@@ -12,14 +12,14 @@
 <meta property="og:url" content="http://Sheroa.github.io/2016/04/17/前端面试小结/index.html">
 <meta property="og:site_name" content="Sheroa's blog">
 <meta property="og:description" content="前端面试小结找工作一个多月了，面试了不下15家。基本的前端面试问题，应该说都遇到了。是时候，总结一下这段时间的面试。">
-<meta property="og:image" content="http://Sheroa.github.io/./web1.jpeg">
+<meta property="og:image" content="http://Sheroa.github.io/web1.jpeg">
 <meta property="og:image" content="http://Sheroa.github.io/./2.JPG">
 <meta property="og:image" content="http://Sheroa.github.io/./Screen Shot 2016-04-08 at 2.09.42 PM.png">
-<meta property="og:updated_time" content="2016-04-18T06:24:01.000Z">
+<meta property="og:updated_time" content="2016-04-18T06:25:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端面试小结">
 <meta name="twitter:description" content="前端面试小结找工作一个多月了，面试了不下15家。基本的前端面试问题，应该说都遇到了。是时候，总结一下这段时间的面试。">
-<meta name="twitter:image" content="http://Sheroa.github.io/./web1.jpeg">
+<meta name="twitter:image" content="http://Sheroa.github.io/web1.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="Sheroa&#39;s blog" type="application/atom+xml">
   
@@ -210,7 +210,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前端面试小结"><a href="#前端面试小结" class="headerlink" title="前端面试小结"></a>前端面试小结</h2><p>找工作一个多月了，面试了不下15家。基本的前端面试问题，应该说都遇到了。是时候，总结一下这段时间的面试。<br><a id="more"></a></p>
-<h3 id="html、css方面"><a href="#html、css方面" class="headerlink" title="html、css方面"></a>html、css方面</h3><h4 id="必问问题"><a href="#必问问题" class="headerlink" title="必问问题"></a>必问问题</h4><h5 id="1-盒子模型"><a href="#1-盒子模型" class="headerlink" title="1.盒子模型"></a>1.盒子模型</h5><p>盒子模型一共有两种：<strong>W3C标准盒子模型</strong>（标准盒子模型）&amp;<strong>IE盒子模型</strong>（怪异盒子模型）。二者都包括：<strong>margin、border、padding、content</strong>。<br>不同的是，标准模型中，content不包含padding和border；怪异模型中，content包含padding和border。<br><img src="./web1.jpeg" alt="Alt text"><br><img src="./2.JPG" alt="Alt text"></p>
+<h3 id="html、css方面"><a href="#html、css方面" class="headerlink" title="html、css方面"></a>html、css方面</h3><h4 id="必问问题"><a href="#必问问题" class="headerlink" title="必问问题"></a>必问问题</h4><h5 id="1-盒子模型"><a href="#1-盒子模型" class="headerlink" title="1.盒子模型"></a>1.盒子模型</h5><p>盒子模型一共有两种：<strong>W3C标准盒子模型</strong>（标准盒子模型）&amp;<strong>IE盒子模型</strong>（怪异盒子模型）。二者都包括：<strong>margin、border、padding、content</strong>。<br>不同的是，标准模型中，content不包含padding和border；怪异模型中，content包含padding和border。<br><img src="/web1.jpeg" alt="Alt text"><br><img src="./2.JPG" alt="Alt text"></p>
 <p>在CSS3中，新出了属性<strong>box-sizing</strong>.这个属性，有三个值：<strong>content-box|border-box|inherit;</strong></p>
 <p>事例如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div1"</span> <span class="attr">style</span>=<span class="string">"box-sizing:content-box;padding:10px;width:20px;height:20px;border:5px solid #000;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div2"</span> <span class="attr">style</span>=<span class="string">"box-sizing:border-box;padding:10px;width:20px;height:20px;border:5px solid #000;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
